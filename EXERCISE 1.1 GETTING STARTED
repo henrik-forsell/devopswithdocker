@@ -1,0 +1,7 @@
+```cmd
+C:\Users\hefo01>docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
+3df3a4edddb3   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 16 seconds ago             keen_kilby
+2fe1d6087b73   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 4 seconds ago              peaceful_jemison
+44486be97484   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute           80/tcp    interesting_hopper
+```
