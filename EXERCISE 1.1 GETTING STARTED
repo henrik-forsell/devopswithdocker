@@ -1,4 +1,28 @@
 ```cmd
+C:\Users\hefo01>docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\hefo01>docker run -d nginx
+44486be9748414862184699584f247368780086901764a37fdc6d4ee5caf503c
+
+C:\Users\hefo01>docker run -d nginx
+2fe1d6087b73a711661cfdc9f3914d6c0a840b438d0b7a79868fc6b0aa07f645
+
+C:\Users\hefo01>docker run -d nginx
+3df3a4edddb3b34d94a316d7112412427edf3f068ebdfe3521bffcfc9036678f
+
+C:\Users\hefo01>docker container ls -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+3df3a4edddb3   nginx     "/docker-entrypoint.…"   14 seconds ago   Up 13 seconds   80/tcp    keen_kilby
+2fe1d6087b73   nginx     "/docker-entrypoint.…"   16 seconds ago   Up 15 seconds   80/tcp    peaceful_jemison
+44486be97484   nginx     "/docker-entrypoint.…"   18 seconds ago   Up 17 seconds   80/tcp    interesting_hopper
+
+C:\Users\hefo01>docker container stop keen_kilby
+keen_kilby
+
+C:\Users\hefo01>docker container stop peaceful_jemison
+peaceful_jemison
+
 C:\Users\hefo01>docker ps -a
 CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                      PORTS     NAMES
 3df3a4edddb3   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 16 seconds ago             keen_kilby
