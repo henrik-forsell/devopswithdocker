@@ -1,0 +1,1 @@
+docker run -v C:\dev\afa\MD\docker\1_9\text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
