@@ -1,0 +1,58 @@
+C:\Users\hefo01>docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview devopsdockeruh/simple-web-service:ubuntu
+
+C:\Users\hefo01>docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete
+1dace236434b: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview devopsdockeruh/simple-web-service:alpine
+
+C:\Users\hefo01>docker image ls
+REPOSITORY                          TAG               IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago   83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago   15.7MB
+
+C:\Users\hefo01>
+
+C:\Users\hefo01>docker image ls
+REPOSITORY                          TAG               IMAGE ID       CREATED       SIZE
+fav_distro                          jammy_jellyfish   bf3dc08bfed0   2 weeks ago   76.2MB
+ubuntu                              latest            bf3dc08bfed0   2 weeks ago   76.2MB
+devopsdockeruh/simple-web-service   ubuntu            4e3362e907d5   3 years ago   83MB
+devopsdockeruh/simple-web-service   alpine            fd312adc88e0   3 years ago   15.7MB
+
+C:\Users\hefo01>docker run fd3
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+...
+
+In another command prompt
+
+C:\Users\hefo01>docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+99faa24c1b88   fd3       "/usr/src/app/server"    23 seconds ago   Up 22 seconds             boring_mendel
+61e63b9c41cf   ubuntu    "sh -c 'apt-get upda…"   15 minutes ago   Up 15 minutes             optimistic_kirch
+32e836a19ccc   ubuntu    "sh -c 'while true; …"   17 minutes ago   Up 17 minutes             ubu
+
+C:\Users\hefo01>docker exec -it 99 sh -c "tail -f ./text.log"
+2024-05-17 08:03:41 +0000 UTC
+2024-05-17 08:03:43 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2024-05-17 08:03:45 +0000 UTC
+2024-05-17 08:03:47 +0000 UTC
+2024-05-17 08:03:49 +0000 UTC
+
+
