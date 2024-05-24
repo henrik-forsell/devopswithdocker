@@ -1,0 +1,18 @@
+# C:\dev\material-applications\example-frontend>docker build . -t frontend
+# docker run --entrypoint "/bin/sh" -it -p 127.0.0.1:5555:5000 frontend
+# http://127.0.0.1:5555/
+
+FROM node:16.3.0-alpine
+
+EXPOSE 5000
+
+WORKDIR /usr/src/app
+
+COPY . . 
+# ENV REACT_APP_BACKEND_URL=http://localhost:6060
+
+RUN npm install && npm run build
+RUN npm install -g serve
+
+# serve -s -l 5000 build
+CMD ["serve", "-s", "-l", "5000", "build"]
