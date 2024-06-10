@@ -1,0 +1,27 @@
+# C:\dev\material-applications\example-frontend>docker build . -t frontend
+# docker run -it -p 5000:5000 frontend
+# http://localhost:5000/
+
+# Use an official Node.js runtime as a parent image
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Set the REACT_APP_BACKEND_URL environment variable
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
+
+# Copy the rest of the application to the working directory
+COPY . .
+
+# Build the application
+RUN npm install && npm run build
+
+# Install serve globally
+RUN npm install -g serve
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Define the command to run the app using serve
+CMD [ "serve", "-s", "-l", "5000", "build" ]
