@@ -1,12 +1,14 @@
 # C:\dev\material-applications\example-backend>docker build . -t backend
-# docker run --entrypoint "/bin/sh" -it -p 127.0.0.1:6060:8080 backend
-# http://127.0.0.1:6060/ping
+# docker run -it -p 8080:8080 backend
+# http://localhost:8080/ping
 
 FROM golang:latest
 
 EXPOSE 8080
 
 WORKDIR /usr/src/app
+
+ENV REQUEST_ORIGIN=http://localhost:5000
 
 COPY . . 
 
@@ -24,9 +26,7 @@ RUN update-ca-certificates
 
 # End hack.
 
-ENV REACT_APP_BACKEND_URL=http://localhost:6060
+RUN go build #server
 
-RUN go build
-RUN go test ./...
-
+# Command to run the executable
 CMD ["./server"]
