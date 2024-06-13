@@ -3,3 +3,6 @@ services:
     image: jwilder/whoami
     ports:
       - 8000:8000
+    volumes:
+      - /root/text.log:/usr/src/app/text.log
+      #Make sure that text.log exist before running docker compose up
