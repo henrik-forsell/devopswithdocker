@@ -1,8 +1,12 @@
 services:
-  simpleweb:
-    image: devopsdockeruh/simple-web-service
+  frontend:
+    image: node:16.3.0-alpine
     ports:
-      - 8080:8080
+      - 5000:5000
     volumes:
       - /root/text.log:/usr/src/app/text.log
       # /root/text.log need to exist before!
+    copy ./material-applications/example-frontend:/usr/src/app/
+    command:
+      - npm install && npm run build
+      - serve -s -l 5000 build
