@@ -1,5 +1,8 @@
 services:
-  whoami:
+  simpleweb:
     image: devopsdockeruh/simple-web-service
     ports:
       - 8080:8080
+    volumes:
+      - /root/text.log:/usr/src/app/text.log
+      # /root/text.log need to exist before!
